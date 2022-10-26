@@ -4,7 +4,7 @@ const { body, validationResult } = require("express-validator");
 //const Vacante =('../models/Vacantes.js')
 const multer = require('multer');
 const shortid = require('shortid');
-const Vacantes = require('../models/Vacantes');
+
 
 exports.formularioNuevaVacante = (req, res) => {
     res.render('nueva-vacante', {

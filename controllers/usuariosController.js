@@ -28,7 +28,7 @@ exports.subirImagen = (req, res, next) => {
 
 // Opciones de Multer
 const configuracionMulter = {
-    limits : {fileSize: 100000},
+   limits : {fileSize: 100000},
     storage: fileStorage = multer.diskStorage({
         destination : (req, file, cb) => {
             cb(null, __dirname+'../../public/uploads/perfiles')
@@ -39,10 +39,11 @@ const configuracionMulter = {
         }
     }),
     fileFilter(req, file, cb){
-        if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png'){
+        if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
             //el callback se ejecuta como ture o false: true cuando la imagen se acepta
             cb(null, true);
         } else{
+            //cb(null, false);
             cb(new Error('Formato No Valido'), false);
         }
     },

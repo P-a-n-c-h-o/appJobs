@@ -39,7 +39,7 @@ const configuracionMulter = {
         }
     }),
     fileFilter(req, file, cb){
-        if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+        if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png'){
             //el callback se ejecuta como ture o false: true cuando la imagen se acepta
             cb(null, true);
         } else{

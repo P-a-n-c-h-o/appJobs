@@ -13,6 +13,7 @@ const flash = require ('connect-flash');
 const createError = require('http-errors')
 const passport = require('./config/passport');
 
+//require('dotenv').config({ path : 'variables.env'});
 require('dotenv').config({ path : 'variables.env'});
 
 const app = express();
@@ -45,8 +46,8 @@ app.use(cookieParser());
 app.use(session({
     secret: process.env.SECRETO,
     key: process.env.KEY,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: new MongoStore({ mongooseConnection : mongoose.connection })
 }));
 

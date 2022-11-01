@@ -34,8 +34,9 @@ const configuracionMulter = {
             cb(null, __dirname+'../../public/uploads/perfiles')
         },
         filename: (req, file,cb) => {
-            const extension = file.mimetype.split('/')[1]
-            cb(null,`${shortid.generate()}.${extension}`);
+            console.log(file)
+            //const extension = file.mimetype.split('/')[1]
+            //cb(null,`${shortid.generate()}.${extension}`);
         }
     }),
     fileFilter(req, file, cb){

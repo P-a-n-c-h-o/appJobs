@@ -76,15 +76,15 @@ app.use((req, res, next) => {
 //Administracion de los errores
 app.use((error, req, res,next) =>{
     res.locals.mensaje = error.message;
-    const status = error.status || 500;
+    const status = error.status || 4000;
     res.locals.status = status;
     res.status(status);
     res.render('error');
 })
 
 //dejar que heroku asigne el puerto 
-//const host= '0.0.0.0';
-//const port = process.env.PORT || 5000;
+const host= '0.0.0.0';
+const port = process.env.PORT || 5000;
 
 app.listen(port, host, ()=>{
     console.log('El servidor esta funcionando');

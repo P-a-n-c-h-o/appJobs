@@ -3,6 +3,7 @@ const Usuarios = mongoose.model('Usuarios');
 const {body,validationResult} = require('express-validator');
 const multer = require('multer');
 const shortid = require('shortid');
+const upload = multer(configuracionMulter).single('imagen');
 
 exports.subirImagen = (req, res, next) => {
     upload(req, res, function(error) {
@@ -31,7 +32,7 @@ const configuracionMulter = {
    limits : {fileSize: 100000},
     storage: fileStorage = multer.diskStorage({
         destination : (req, file, cb) => {
-            cb(null, __dirname+'../../public/uploads/perfiles');
+            cb(null, __dirname+'../../public/uploads/perfiles')
         },
         filename : (req, file, cb) => {
             const extension = file.mimetype.split('/')[1];
@@ -50,7 +51,7 @@ const configuracionMulter = {
     
 }
 
-const upload = multer(configuracionMulter).single('imagen');
+
 
 exports.formCrearCuenta = (req, res) => {
     res.render('crear-cuenta', {

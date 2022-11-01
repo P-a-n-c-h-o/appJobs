@@ -31,12 +31,11 @@ const configuracionMulter = {
    limits : {fileSize: 100000},
     storage: fileStorage = multer.diskStorage({
         destination : (req, file, cb) => {
-            cb(null, __dirname+'../../public/uploads/perfiles')
+            cb(null, __dirname+'../../public/uploads/perfiles');
         },
-        filename: (req, file,cb) => {
-            console.log(file)
-            //const extension = file.mimetype.split('/')[1]
-            //cb(null,`${shortid.generate()}.${extension}`);
+        filename : (req, file, cb) => {
+            const extension = file.mimetype.split('/')[1];
+            cb(null, `${shortid.generate()}.${extension}`);
         }
     }),
     fileFilter(req, file, cb){

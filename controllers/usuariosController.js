@@ -3,54 +3,49 @@ const Usuarios = mongoose.model('Usuarios');
 const {body,validationResult} = require('express-validator');
 const multer = require('multer');
 const shortid = require('shortid');
-const upload = multer(configuracionMulter).single('imagen');
 
 exports.subirImagen = (req, res, next) => {
     upload(req, res, function(error) {
-        if(error){
-            
+        if(error) {
             if(error instanceof multer.MulterError) {
-                if(error.code === 'LIMIT_FILE_SIZE'){
-                    req.flash('error', 'El archivo es muy grande: Máximo 100kb');
-                }else{
-                    req.flash('error', error.message)
+                if(error.code === 'LIMIT_FILE_SIZE') {
+                    req.flash('error', 'El archivo es muy grande: Máximo 100kb ');
+                } else {
+                    req.flash('error', error.message);
                 }
             } else {
                 req.flash('error', error.message);
             }
             res.redirect('/administracion');
-            return;       
-        }else {
+            return;
+        } else {
             return next();
         }
     });
-
 }
-
 // Opciones de Multer
 const configuracionMulter = {
-   limits : {fileSize: 100000},
+    limits : { fileSize : 100000 },
     storage: fileStorage = multer.diskStorage({
         destination : (req, file, cb) => {
-            cb(null, __dirname+'../../public/uploads/perfiles')
-        },
+            cb(null, __dirname+'../../public/uploads/perfiles');
+        }, 
         filename : (req, file, cb) => {
             const extension = file.mimetype.split('/')[1];
             cb(null, `${shortid.generate()}.${extension}`);
         }
     }),
-    fileFilter(req, file, cb){
-        if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
-            //el callback se ejecuta como ture o false: true cuando la imagen se acepta
+    fileFilter(req, file, cb) {
+        if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' ) {
+            // el callback se ejecuta como true o false : true cuando la imagen se acepta
             cb(null, true);
-        } else{
-            //cb(null, false);
-            cb(new Error('Formato No Valido'), false);
+        } else {
+            cb(new Error('Formato No Válido'));
         }
-    },
-    
+    }
 }
 
+const upload = multer(configuracionMulter).single('imagen');
 
 
 exports.formCrearCuenta = (req, res) => {

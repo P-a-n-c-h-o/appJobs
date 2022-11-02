@@ -25,7 +25,7 @@ exports.subirImagen = (req, res, next) => {
 }
 // Opciones de Multer
 const configuracionMulter = {
-    limits : { fileSize : 100000 },
+    limits : { fileSize : 6000000 },
     storage: fileStorage = multer.diskStorage({
         destination : (req, file, cb) => {
             cb(null, __dirname+'../../public/uploads/perfiles');

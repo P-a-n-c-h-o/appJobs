@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "dev": "nodemon ./index",
+    "dev": "node ./index",
     "desarrollo": "concurrently  \"npm run dev\" \"npm run watch\" ",
     "start": "node ./index.js",
     "watch": "webpack -w --mode development"

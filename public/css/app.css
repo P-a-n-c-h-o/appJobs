@@ -115,7 +115,7 @@ h3 {
     flex:1;
     position: relative;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     .buscador form {
         flex: 0 0 40%;
     }
@@ -149,7 +149,7 @@ h3 {
     cursor: pointer;
 }
 
-@media (min-width:768px) {
+@media (min-width:1000px) {
     .candidato,
     .vacante {
         display: flex;
@@ -216,7 +216,7 @@ h3 {
 .contenido-superior {
     margin-bottom: 6rem;
 }
-@media (min-width:768px){
+@media (min-width:1000px){
     .vacante-contenedor {
         display: flex;
         justify-content: space-between;
@@ -373,17 +373,17 @@ trix-toolbar .trix-button--icon-strike {
     cursor: pointer;
 }
 
-@media (min-width:480px) {
+@media (min-width:800px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 33% - 1rem);
     }
 }
-@media (min-width:768px) {
+@media (min-width:1000px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 25% - 1rem);
     }
 }
-@media (min-width:992px) {
+@media (min-width:1000px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 20% - 1rem);
     }
@@ -499,7 +499,7 @@ p.candidatos {
     font-size: 2.4rem;
     color: white;
 }
-@media (min-width:768px){
+@media (min-width:1000px){
     .enviar-datos {
         flex: 0 0 calc(70% - 1rem);
     }

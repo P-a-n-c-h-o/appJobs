@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node ./index",
     "desarrollo": "concurrently  \"npm run dev\" \"npm run watch\" ",
-    "start": "node ./index.js",
+    "start": "nodemon ./index.js",
     "watch": "webpack -w --mode development"
   },
   "repository": {

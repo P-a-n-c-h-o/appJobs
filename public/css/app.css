@@ -96,10 +96,26 @@ h3 {
     align-items: flex-start;
     margin-bottom: 5rem;
 }
+@media (max-width:800px){
+    .site-header{
+    flex-direction: column;
+    align-items: center;
+    }
+    h2 {
+        text-align: center;
+        
+    }
+    p {
+        text-align: center;
+        
+    }
+
+}
 
 .nombre-sitio {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .nombre-sitio a {
     color: white;
@@ -115,7 +131,7 @@ h3 {
     flex:1;
     position: relative;
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
     .buscador form {
         flex: 0 0 40%;
     }
@@ -149,18 +165,8 @@ h3 {
     cursor: pointer;
 }
 
-@media (min-width:1000px) {
-    .candidato,
-    .vacante {
-        display: flex;
-    }
-    .caja {
-        flex: 1;
-    }
-    .caja:first-of-type{
-        flex: 2;
-    }
-}
+
+
 .candidato,
 .vacante {
     padding: 3rem 0;
@@ -198,7 +204,53 @@ h3 {
 .caja .btn {
     text-align: center;
 }
+@media (min-width:800px) {
+    .candidato,
+    .vacante {
+        display: flex;
+        
+    }
+    .caja {
+        flex: 1;
+        
+    }
+    .caja:first-of-type{
+        flex: 2;
+        
+    }
+    
+}
+@media (max-width:800px) {
+    .vacante{
+        justify-content: center;
+        align-items: center;
+    }
+    .caja{
+        justify-content: center;
+        align-items: center; 
+    }
+    h3{
+        text-align: center;
+    }
+    p.puesto,
+    p.candidatos,
+    .caja .puesto{
+        text-align: center; 
+    }
 
+    .panel-administracion{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+
+
+    .btn-rojo{
+        margin-top: 20px;
+    }
+
+}
 .centrar-vertical{
     display: flex;
     align-items: center;
@@ -216,7 +268,7 @@ h3 {
 .contenido-superior {
     margin-bottom: 6rem;
 }
-@media (min-width:1000px){
+@media (min-width:800px){
     .vacante-contenedor {
         display: flex;
         justify-content: space-between;
@@ -373,17 +425,17 @@ trix-toolbar .trix-button--icon-strike {
     cursor: pointer;
 }
 
-@media (min-width:800px) {
+@media (min-width:700px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 33% - 1rem);
     }
 }
-@media (min-width:1000px) {
+@media (min-width:800px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 25% - 1rem);
     }
 }
-@media (min-width:1000px) {
+@media (min-width:800px) {
     .lista-conocimientos li {
         flex: 0 0 calc( 20% - 1rem);
     }
@@ -410,15 +462,28 @@ p.candidatos {
 .cerrar-sesion a {
     margin:  0 2rem 0 0 ;
     color: #888;
+    align-items: center;
 }
 .cerrar-sesion {
     margin-top: 2rem;
     color: white;
     display: flex;
+    align-items: center;
 }
 .cerrar-sesion img {
-        width: 80px;
+    width: 60px;
+    align-items: center;
 }
+@media (max-width:800px){
+    .nombre-sitio{
+    flex-direction: column;
+    }
+    .cerrar-sesion {
+        padding: 10px 0px;
+    }
+
+}
+
 .botones {
     display: flex;
     justify-content: flex-start;
@@ -429,6 +494,19 @@ p.candidatos {
 .botones a {
     margin-right: 2rem;
 }
+@media (max-width:800px){
+    .separador {
+        justify-content: center;
+        align-items: center; 
+    }
+    .btn-verde{
+      margin-top: 20px;
+    }
+
+}
+
+
+
 .lista-candidatos p,
 .lista-vacantes p {
     color: white;

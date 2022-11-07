@@ -129,7 +129,7 @@ exports.editarPerfil = async (req, res) => {
     }
 
    if(req.file) {
-        usuario.imagen = req.file.filename.lean();
+        usuario.imagen = req.file.filename;
    }
 
     await usuario.save();

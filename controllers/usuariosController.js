@@ -114,7 +114,7 @@ exports.formEditarPerfil = (req, res) => {
         usuario: req.user.toObject(),
         cerrarSesion: true,
         nombre: req.user.nombre,
-        imagen: req.user.imagen.lean()
+        imagen: req.user.imagen
     })
 }
 

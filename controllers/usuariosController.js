@@ -120,7 +120,7 @@ exports.formEditarPerfil = (req, res) => {
 
 //guardar vambios al editar perfil
 exports.editarPerfil = async (req, res) => {
-    const usuario = await Usuarios.findById(req.user._id);
+    const usuario = await Usuarios.findById(req.user._id).lean();
 
     usuario.nombre = req.body.nombre;
     usuario.email = req.body.email;

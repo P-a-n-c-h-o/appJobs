@@ -114,13 +114,13 @@ exports.formEditarPerfil = (req, res) => {
         usuario: req.user.toObject(),
         cerrarSesion: true,
         nombre: req.user.nombre,
-        imagen: req.user.imagen
+        imagen: req.user.imagen.lean()
     })
 }
 
 //guardar vambios al editar perfil
 exports.editarPerfil = async (req, res) => {
-    const usuario = await Usuarios.findById(req.user._id).lean();
+    const usuario = await Usuarios.findById(req.user._id);
 
     usuario.nombre = req.body.nombre;
     usuario.email = req.body.email;
@@ -129,7 +129,7 @@ exports.editarPerfil = async (req, res) => {
     }
 
    if(req.file) {
-        usuario.imagen = req.file.filename;
+        usuario.imagen = req.file.filename.lean();
    }
 
     await usuario.save();
